@@ -1,10 +1,12 @@
 package busitweek18.treasurehunt.treasurehunt;
 
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +39,12 @@ public class SimplePuzzleActivity extends AppCompatActivity {
         currentTask = storyLine.currentTask();
         puzzle = (SimplePuzzle) currentTask.getPuzzle();
         question.setText(puzzle.getQuestion());
+
+        Button answer_question = findViewById(R.id.answer_question);
+        Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/BlackPearl.ttf");
+        question.setTypeface(tf);
+        answer_question.setTypeface(tf);
+
     }
     public void answerQuestion(View view){
         String userAnswer = answer.getText().toString();
