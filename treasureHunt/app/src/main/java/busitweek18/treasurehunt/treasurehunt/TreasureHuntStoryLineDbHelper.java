@@ -109,7 +109,7 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .radius(20)
                 .choicePuzzle()
                 .question("You've reached yor destination! Press 'done'," +
-                        " go inzide and enjoy a good meal!")        // TODO add question
+                        " go inside and enjoy a good meal!")        // TODO add question
                 .addChoice("Done", true)                // TODO add answers
                 .puzzleDone()
                 .taskDone();
