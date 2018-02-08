@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    style="@style/mainScreenLayout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0"
+
+        android:orientation="horizontal">
+        <!--style="@style/mainText"-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="@string/pickatreasure"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0"
+
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/musea"
+            android:background="@color/colorBluePastel"
+            android:text="@string/selectMuseum"
+
+            style="@style/pickTreasureButtons"
+            android:onClick="onPick"
+            />
+
+        <Button
+            android:id="@+id/bar"
+            android:background="@color/colorRedPastel"
+            android:text="@string/selectBar"
+
+            style="@style/pickTreasureButtons"
+            android:onClick="onPick"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0"
+
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/restaurant"
+            android:background="@color/colorGreenPastel"
+            android:text="@string/selectRestaurant"
+
+            style="@style/pickTreasureButtons"
+            android:onClick="onPick"
+            />
+
+        <Button
+            android:id="@+id/fastfood"
+            android:background="@color/colorOrangePastel"
+            android:text="@string/selectFastFood"
+
+            style="@style/pickTreasureButtons"
+            android:onClick="onPick"
+            />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
