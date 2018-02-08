@@ -1,1 +1,2 @@
-include ':app'
+include ':app', ':storyline-engine'
+project(':storyline-engine').projectDir = new File('engine')
