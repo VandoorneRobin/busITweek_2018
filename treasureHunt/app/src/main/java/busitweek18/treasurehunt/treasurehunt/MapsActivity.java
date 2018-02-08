@@ -34,6 +34,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.maps.android.SphericalUtil;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import cz.mendelu.busItWeek.library.BeaconTask;
 import cz.mendelu.busItWeek.library.ChoicePuzzle;
@@ -44,6 +45,7 @@ import cz.mendelu.busItWeek.library.Puzzle;
 import cz.mendelu.busItWeek.library.SimplePuzzle;
 import cz.mendelu.busItWeek.library.StoryLine;
 import cz.mendelu.busItWeek.library.Task;
+import cz.mendelu.busItWeek.library.beacons.BeaconDefinition;
 import cz.mendelu.busItWeek.library.beacons.BeaconUtil;
 import cz.mendelu.busItWeek.library.qrcode.QRCodeUtil;
 
@@ -51,15 +53,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     private GoogleMap mMap;
-    private StoryLine storyLine;
-    private Task currentTask;
-    private GoogleApiClient googleApiClient;
-    private LocationRequest locationRequest;
-    private BeaconUtil beaconUtil;
-    private HashMap<Task, Marker> markers = new HashMap<>();
     private LatLngBounds.Builder latLngBoundsBuilder;
-
-
     //classes from the engine
     private StoryLine storyLine;
     private Task currentTask;
@@ -95,7 +89,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         locationRequest.setInterval(5000);
 
 
-        qrButton = findViewById(R.id.qr_code_button);
+      //  qrButton = findViewById(R.id.qr_code_button);
 
         beaconUtil = new BeaconUtil(this);
     }
@@ -186,20 +180,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    @Override
-    public void onConnected(@Nullable Bundle bundle) {
 
-    }
-
-    @Override
-    public void onConnectionSuspended(int i) {
-
-    }
-
-    @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
-    }
 
     private void initialiazeListeners() {
         if (currentTask != null) {
