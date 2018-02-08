@@ -24,6 +24,10 @@
         android:hint="Write your answer..." />
 
     <Button
+
+        android:id="@+id/answer_question"
+        android:onClick="answerQuestion"
+
         android:text="@string/answer_question"
         style="@style/answer_button"
         android:onClick="answerQuestion"/>

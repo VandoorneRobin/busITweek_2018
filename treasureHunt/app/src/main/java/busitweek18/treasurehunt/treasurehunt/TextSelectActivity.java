@@ -1,5 +1,6 @@
 package busitweek18.treasurehunt.treasurehunt;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -54,6 +55,11 @@ public class TextSelectActivity extends AppCompatActivity {
             answers.add(entry.getKey());
         }
         adapter.notifyDataSetChanged();
+
+        //stil has to be fixed,
+//            Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/BlackPearl.ttf");
+//            listOfAnswers.setTypeface(tf);
+        //stil has to be fixed,
     }
 
     public static class AnswerViewHolder extends RecyclerView.ViewHolder{

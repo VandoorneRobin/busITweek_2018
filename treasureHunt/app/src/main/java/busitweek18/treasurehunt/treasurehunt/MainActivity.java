@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         // use this to adapt the font-size of this activity
         Button button = findViewById(R.id.startButton);
-
+      
         Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/BlackPearl.ttf");
         button.setTypeface(tf);
         // use this to adapt the font-size of this activity

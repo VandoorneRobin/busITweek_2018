@@ -1,5 +1,6 @@
 package busitweek18.treasurehunt.treasurehunt;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,6 +55,10 @@ public class ImageSelectActivity extends AppCompatActivity {
         for (Map.Entry<Integer, Boolean> entry : puzzle.getImages().entrySet()) {
             answers.add(entry.getKey());
         }
+
+        TextView textView = findViewById(R.id.question);
+        Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/BlackPearl.ttf");
+        textView.setTypeface(tf);
     }
 
     public class AnswerViewHolder extends RecyclerView.ViewHolder {
