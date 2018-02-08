@@ -28,7 +28,7 @@ public class TreasurepickActivity extends AppCompatActivity {
     public void onPick(View view){
         Log.i(TAG,"User picked a treasure");
         //have to set this to mapactivity
-        Intent intent = new Intent(this, TreasurepickActivity.class);
+        Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
 
