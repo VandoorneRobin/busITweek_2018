@@ -3,4 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="colorRedPastel">#ffb3ba</color>
+    <color name="colorGreenPastel">#baffc9</color>
+    <color name="colorBluePastel">#bae1ff</color>
+    <color name="colorOrangePastel">#ffdfba</color>
+
+    <color name="colorGrayHeader">#cfcfc4</color>
+    <color name="colorStartScreen">#FAFAFA</color>
+
 </resources>
