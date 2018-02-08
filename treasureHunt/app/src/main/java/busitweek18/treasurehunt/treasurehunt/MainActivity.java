@@ -29,10 +29,9 @@ public class MainActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         decorView.setSystemUiVisibility(uiOptions);
 
-
-
         // use this to adapt the font-size of this activity
         Button button = findViewById(R.id.startButton);
+      
         Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/BlackPearl.ttf");
         button.setTypeface(tf);
         // use this to adapt the font-size of this activity
