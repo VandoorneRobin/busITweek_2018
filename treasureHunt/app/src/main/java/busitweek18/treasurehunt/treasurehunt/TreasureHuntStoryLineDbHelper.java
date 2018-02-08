@@ -22,7 +22,7 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
     private Terrain playTerrain = Terrain.CAMPUS;
 
     public TreasureHuntStoryLineDbHelper() {
-        super(1);
+        super(2);
         addLocations();
         ArrayList<LatLng> locations;
     }
