@@ -35,7 +35,7 @@ public class ImageSelectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_select);
 
-        storyLine = StoryLine.open(this, MyDemoStoryLineDBHelper.class);
+        storyLine = StoryLine.open(this, TreasureHuntStoryLineDbHelper.class);
         currentTask = storyLine.currentTask();
         puzzle = (ImageSelectPuzzle) currentTask.getPuzzle();
 
