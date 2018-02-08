@@ -42,7 +42,7 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
         // Church of St. Josef
         builder.addBeaconTask("2")
                 .location(locations.get(1).latitude, locations.get(1).longitude)
-                .beacon(0, 0)                    // TODO add beacon id
+                .beacon(30265, 64901)            // BLUE beacon
                 .simplePuzzle()
                 .question("What's the name of this church?") // TODO add question
                 .answer("Church of St. Josef")               // TODO add answer
@@ -52,7 +52,7 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
         // Cathedral of St. Peter and Paul
         builder.addBeaconTask("3")
                 .location(locations.get(2).latitude, locations.get(2).longitude)
-                .beacon(0, 0)                       // TODO add beacon id
+                .beacon(63187, 53881)               // YELLOW beacon
                 .simplePuzzle()
                 .question("What's the name of this church?")    // TODO add question
                 .answer("Church of St. Josef")                  // TODO add answer
@@ -73,7 +73,7 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
         // Brněnské kolo
         builder.addBeaconTask("5")
                 .location(locations.get(4).latitude, locations.get(4).longitude)
-                .beacon(0, 0)                                   // TODO add beacon id
+                .beacon(23482, 14779)                          // RED beacon
                 .simplePuzzle()
                 .question("What animal, that people saw as a dragon, " +
                         "is hanging from the ceiling here?")               // TODO add question
