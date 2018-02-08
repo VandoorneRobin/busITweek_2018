@@ -10,6 +10,8 @@
     <color name="colorOrangePastel">#ffdfba</color>
 
     <color name="colorGrayHeader">#cfcfc4</color>
-    <color name="colorStartScreen">#FAFAFA</color>
+    <color name="colorWhite">#FAFAFA</color>
+
+    <color name="colorbg">#e7ce8b</color>
 
 </resources>

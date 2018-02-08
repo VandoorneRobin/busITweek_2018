@@ -4,4 +4,5 @@
  <!--usage?-->
 
     <dimen name="margin_five">5dp</dimen>
+    <dimen name="fitydp">50dp</dimen>
 </resources>

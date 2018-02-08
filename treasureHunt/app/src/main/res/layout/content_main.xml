@@ -5,51 +5,34 @@
 
     style="@style/mainScreenLayout">
 
-    <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1.0"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    android:orientation="horizontal">
-        <!--style="@style/mainText"-->
-
-        <TextView
+        <ImageView
+            android:id="@+id/backgroundMain"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:src="@drawable/treasuremap"
+            android:scaleType = "fitXY"
+            android:background="#e7ce8b"
+            />
+
+
+
+
+        <Button
+            android:id="@+id/startButton"
+            android:text="@string/startTreasureHunt"
+            android:textColor="@color/colorWhite"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:text="Treasure Hunt Brno"/>
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:background="@android:color/transparent"
+            android:onClick="goToTreasures"/>
 
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1.0"
-
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/restaurant"
-            android:background="@color/colorGreenPastel"
-            android:text="@string/selectRestaurant"
-
-            style="@style/pickTreasureButtons"
-            />
-
-        <Button
-            android:id="@+id/fastfood"
-            android:background="@color/colorOrangePastel"
-            android:text="@string/selectFastFood"
-
-            style="@style/pickTreasureButtons"
-
-            />
-
-
-    </LinearLayout>
+    </RelativeLayout>
 
 
 
