@@ -20,5 +20,7 @@
     Once you have your key (it starts with "AIza"), replace the "google_maps_key"
     string in this file.
     -->
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">YOUR_KEY_HERE</string>
+
+    <!-- TODO: STUUR JE SHA1-FINGERPRINT NAAR AXEL(via Facebook ofzo)!!!-->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBw40ypFDhc4WKvy179S-RUKCPUE7ZxM2k</string>
 </resources>
