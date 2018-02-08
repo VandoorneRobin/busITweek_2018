@@ -21,8 +21,10 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
     // CHANGE FOR CAMPUS/REAL LOCATIONS:
     private Terrain playTerrain = Terrain.CAMPUS;
 
+    public static HashMap<String, Integer> markerResources = new HashMap<>();
+
     public TreasureHuntStoryLineDbHelper() {
-        super(1);
+        super(5);
         addLocations();
         ArrayList<LatLng> locations;
     }
@@ -40,10 +42,13 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .hint("Mahen Theatre, built as German Deutsches Stadttheater in 1882, was one of the first public buildings in the world lit entirely by electric light. It was built in a combination of Neo-renaissance, Neo-baroque and Neoclassical architectural styles.")
                 .puzzleDone()
                 .taskDone();
+        markerResources.put("1", R.drawable.ic_theatre_masks);
+
         // Church of St. Josef
         builder.addBeaconTask("2")
                 .location(locations.get(1).latitude, locations.get(1).longitude)
-                .beacon(0, 0)                    // TODO add beacon id
+
+                .beacon(30265, 64901)    // BLUE beacon                 
                 .imageSelectPuzzle()
                 .question("Which statue do you see on the church?")
                 .hint("There is a famous Brno legend connected to the statue. The statue is placed in een certain position in the direction of Saint Peter and Paul's cathedral. It all arises from a competition between the two churches to build the higher churchtower. ")
@@ -53,17 +58,19 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .addImage(R.drawable.wrongstatue3, false)
                 .puzzleDone()
                 .taskDone();
+        markerResources.put("2", R.drawable.ic_church);
 
 
         // Cathedral of St. Peter and Paul
         builder.addBeaconTask("3")
                 .location(locations.get(2).latitude, locations.get(2).longitude)
-                .beacon(0, 0)                       // TODO add beacon id
+                .beacon(63187, 53881)               // YELLOW beacon
                 .simplePuzzle()
                 .question("What's the name of this church?")    // TODO add question
                 .answer("Church of St. Josef")                  // TODO add answer
                 .puzzleDone()
                 .taskDone();
+        markerResources.put("3", R.drawable.ic_church_1);
 
         // Cabbage Market Square
         builder.addCodeTask("4")
@@ -78,17 +85,19 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .addChoice(	"Baroque, Gothic Revival", true)
                 .puzzleDone()
                 .taskDone();
+        markerResources.put("4", R.drawable.ic_augustus_of_prima_porta);
 
             // Brněnské kolo & Old Town Hall
         builder.addBeaconTask("5")
                 .location(locations.get(4).latitude, locations.get(4).longitude)
-                .beacon(0, 0)                                   // TODO add beacon id
+                .beacon(23482, 14779)                          // RED beacon
                 .simplePuzzle()
                 .hint("One of the most famous legends in the city of Brno is that of the dragon that once threatened the people. It is said that the beast was savaging the citizens and their livestock and no one seemed to know how to stop it. That is until a visiting butcher had a brainstorm. The tradesman called for an animal hide (ox or sheep depending on the telling) and a large amount of caustic lime. The lime was placed in the hide and sewn up to look like a juicy meal for the dragon. The trojan feast was fed to the dragon and it was successfully vanquished.")
                 .question("What animal is the dragon actually?")
                 .answer("Crocodile")
                 .puzzleDone()
                 .taskDone();
+        markerResources.put("5", R.drawable.ic_crocodile_facing_right);
 
         // Astronomical Clock
         builder.addCodeTask("6")
@@ -100,6 +109,7 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .answer("Clock")
                 .puzzleDone()
                 .taskDone();
+        markerResources.put("6", R.drawable.ic_big_ben);
 
         // Špilberk Castle
         builder.addGPSTask("7")
@@ -112,6 +122,7 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .addChoice("Prison", true)
                 .puzzleDone()
                 .taskDone();
+        markerResources.put("7", R.drawable.ic_sand_castle);
 
         //treasure
         builder.addGPSTask("Treasure")
@@ -123,6 +134,7 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .addChoice("Done", true)                // TODO add answers
                 .puzzleDone()
                 .taskDone();
+        markerResources.put("Treasure", R.drawable.ic_logomakr_3uv46h);
     }
 
     private void addLocations() {

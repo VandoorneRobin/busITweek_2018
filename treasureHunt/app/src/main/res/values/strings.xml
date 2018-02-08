@@ -13,6 +13,10 @@
     <string name="startTreasureHunt">Start Treasure Hunt</string>
     <string name="pickatreasure">Pick a treasure</string>
     <string name="title_activity_text_select">TextSelectActivity</string>
+
     <string name="title_activity_simple_puzzle">SimplePuzzleActivity</string>
+
+    <string name="answer_question">Answer question</string>
+
 
 </resources>

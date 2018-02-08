@@ -1,11 +1,12 @@
 package busitweek18.treasurehunt.treasurehunt;
 
         import android.content.Intent;
+        import android.graphics.Typeface;
         import android.os.Bundle;
         import android.support.v7.app.AppCompatActivity;
         import android.util.Log;
         import android.view.View;
-
+        import android.widget.Button;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +28,14 @@ public class MainActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         decorView.setSystemUiVisibility(uiOptions);
+
+        // use this to adapt the font-size of this activity
+        Button button = findViewById(R.id.startButton);
+
+        Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/BlackPearl.ttf");
+        button.setTypeface(tf);
+        // use this to adapt the font-size of this activity
+
     }
 
     public void goToTreasures(View view) {

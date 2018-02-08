@@ -22,5 +22,4 @@
 
     <include layout="@layout/content_simple_puzzle" />
 
-
 </android.support.design.widget.CoordinatorLayout>

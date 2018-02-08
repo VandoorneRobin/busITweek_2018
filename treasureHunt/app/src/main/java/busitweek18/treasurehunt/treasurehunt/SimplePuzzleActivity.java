@@ -1,9 +1,11 @@
 package busitweek18.treasurehunt.treasurehunt;
 
+
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
@@ -27,7 +29,7 @@ public class SimplePuzzleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_simple_puzzle);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -35,6 +37,7 @@ public class SimplePuzzleActivity extends AppCompatActivity {
         question = findViewById(R.id.question);
 
         storyLine = StoryLine.open(this, TreasureHuntStoryLineDbHelper.class);
+
         currentTask = storyLine.currentTask();
         puzzle = (SimplePuzzle) currentTask.getPuzzle();
         question.setText(puzzle.getQuestion());
@@ -42,11 +45,13 @@ public class SimplePuzzleActivity extends AppCompatActivity {
     public void answerQuestion(View view){
         String userAnswer = answer.getText().toString();
         String correctAnswer = puzzle.getAnswer();
+
         if(userAnswer.equalsIgnoreCase(correctAnswer)){
             storyLine.currentTask().finish(true);
             finish();
         }else{
             Toast.makeText(this, "Wrong answer." , Toast.LENGTH_SHORT).show();
         }
+
     }
 }
