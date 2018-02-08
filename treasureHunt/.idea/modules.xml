@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/engine/storyline-engine.iml" filepath="$PROJECT_DIR$/engine/storyline-engine.iml" />
+      <module fileurl="file://C:\Users\robin.vandoorne\Desktop\origin\busITweek_2018\treasureHunt\engine\storyline-engine.iml" filepath="C:\Users\robin.vandoorne\Desktop\origin\busITweek_2018\treasureHunt\engine\storyline-engine.iml" />
       <module fileurl="file://$PROJECT_DIR$/treasureHunt.iml" filepath="$PROJECT_DIR$/treasureHunt.iml" />
     </modules>
   </component>
