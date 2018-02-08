@@ -21,8 +21,10 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
     // CHANGE FOR CAMPUS/REAL LOCATIONS:
     private Terrain playTerrain = Terrain.CAMPUS;
 
+    public static HashMap<String, Integer> markerResources = new HashMap<>();
+
     public TreasureHuntStoryLineDbHelper() {
-        super(2);
+        super(5);
         addLocations();
         ArrayList<LatLng> locations;
     }
@@ -39,6 +41,8 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .answer("")                              // TODO add answer
                 .puzzleDone()
                 .taskDone();
+        markerResources.put("1", R.drawable.ic_theatre_masks);
+
         // Church of St. Josef
         builder.addBeaconTask("2")
                 .location(locations.get(1).latitude, locations.get(1).longitude)
@@ -48,6 +52,7 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .answer("Church of St. Josef")               // TODO add answer
                 .puzzleDone()
                 .taskDone();
+        markerResources.put("2", R.drawable.ic_church);
 
         // Cathedral of St. Peter and Paul
         builder.addBeaconTask("3")
@@ -58,6 +63,7 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .answer("Church of St. Josef")                  // TODO add answer
                 .puzzleDone()
                 .taskDone();
+        markerResources.put("3", R.drawable.ic_church_1);
 
         // Cabbage Market Square
         builder.addCodeTask("4")
@@ -69,6 +75,7 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .answer("Mozart")                                       // TODO add answer
                 .puzzleDone()
                 .taskDone();
+        markerResources.put("4", R.drawable.ic_augustus_of_prima_porta);
 
         // Brněnské kolo
         builder.addBeaconTask("5")
@@ -80,6 +87,7 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .answer("Crocodile")                                       // TODO add answer
                 .puzzleDone()
                 .taskDone();
+        markerResources.put("5", R.drawable.ic_crocodile_facing_right);
 
         // Astronomical Clock
         builder.addCodeTask("6")
@@ -91,6 +99,7 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .answer("11:00")                                            // TODO add answer
                 .puzzleDone()
                 .taskDone();
+        markerResources.put("6", R.drawable.ic_big_ben);
 
         // Špilberk Castle
         builder.addGPSTask("7")
@@ -102,6 +111,7 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .addChoice("No", false)
                 .puzzleDone()
                 .taskDone();
+        markerResources.put("7", R.drawable.ic_sand_castle);
 
         //
         builder.addGPSTask("Treasure")
@@ -113,6 +123,7 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .addChoice("Done", true)                // TODO add answers
                 .puzzleDone()
                 .taskDone();
+        markerResources.put("Treasure", R.drawable.ic_logomakr_3uv46h);
     }
 
     private void addLocations() {

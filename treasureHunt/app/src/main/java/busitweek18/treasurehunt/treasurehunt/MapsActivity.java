@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageButton;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -106,7 +107,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             } else if (task instanceof CodeTask) {
                 // Code task
             }
-            MarkerOptions markerOptions = new MarkerOptions().position(new LatLng(task.getLatitude(), task.getLongitude())).title(task.getName()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_delete_cross));
+
+            int src;
+            try {
+                HashMap<String, Integer> resources = TreasureHuntStoryLineDbHelper.markerResources;
+                src = resources.get(task.getName());
+            }
+            catch (Exception ex) {
+                src = R.drawable.ic_delete_cross;
+            }
+            MarkerOptions markerOptions =
+                    new MarkerOptions()
+                            .position(new LatLng(task.getLatitude(), task.getLongitude()))
+                            .title(task.getName())
+                            .icon(BitmapDescriptorFactory
+                                    .fromResource(
+                                            src
+                                    )
+                            );
             marker = mMap.addMarker(markerOptions);
             markers.put(task, marker);
             latLngBoundsBuilder.include(new LatLng(task.getLatitude(), task.getLongitude()));
