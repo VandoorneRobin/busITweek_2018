@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    style="@style/mainScreenLayout">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1.0"
+
+    android:orientation="horizontal">
+        <!--style="@style/mainText"-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="Treasure Hunt Brno"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0"
+
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/restaurant"
+            android:background="@color/colorGreenPastel"
+            android:text="@string/selectRestaurant"
+
+            style="@style/pickTreasureButtons"
+            />
+
+        <Button
+            android:id="@+id/fastfood"
+            android:background="@color/colorOrangePastel"
+            android:text="@string/selectFastFood"
+
+            style="@style/pickTreasureButtons"
+
+            />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
