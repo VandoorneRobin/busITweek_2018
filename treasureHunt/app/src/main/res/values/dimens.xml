@@ -1,7 +1,7 @@
 <resources>
-<!--usage?-->
+    <!--usage?-->
     <dimen name="fab_margin">16dp</dimen>
- <!--usage?-->
+    <!--usage?-->
 
     <dimen name="margin_five">5dp</dimen>
     <dimen name="fitydp">50dp</dimen>
