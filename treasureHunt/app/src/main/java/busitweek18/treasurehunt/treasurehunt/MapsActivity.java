@@ -1,5 +1,6 @@
 package busitweek18.treasurehunt.treasurehunt;
 
+import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
@@ -19,6 +20,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -44,6 +46,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private BeaconUtil beaconUtil;
     private HashMap<Task, Marker> markers = new HashMap<>();
     private LatLngBounds.Builder latLngBoundsBuilder;
+
+
+    private static final String TAG = MapsActivity.class.getSimpleName();
+
 
 
     @Override
@@ -83,6 +89,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
+        try {
+            // Customise the styling of the base map using a JSON object defined
+            // in a raw resource file.
+            boolean success = googleMap.setMapStyle(
+                    MapStyleOptions.loadRawResourceStyle(
+                            this, R.raw.style_json));
+
+            if (!success) {
+                Log.e(TAG, "Style parsing failed.");
+            }
+        } catch (Resources.NotFoundException e) {
+            Log.e(TAG, "Can't find style. Error: ", e);
+        }
+
         initializeTasks();
     }
 
