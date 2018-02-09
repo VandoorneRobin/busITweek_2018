@@ -28,7 +28,7 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
     public static HashMap<String, Integer> markerResources = new HashMap<>();
 
     public TreasureHuntStoryLineDbHelper() {
-        super(7);
+        super(8);
         addLocations();
         ArrayList<LatLng> locations;
     }
