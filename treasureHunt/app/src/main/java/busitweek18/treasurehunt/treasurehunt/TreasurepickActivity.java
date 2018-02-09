@@ -47,6 +47,26 @@ public class TreasurepickActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void startMuseumRoute(View view) {
+        TreasureHuntStoryLineDbHelper.playTerrain = TreasureHuntStoryLineDbHelper.Terrain.MUSEUM;
+        onPick(view);
+    }
+
+    public void startBarRoute(View view) {
+        TreasureHuntStoryLineDbHelper.playTerrain = TreasureHuntStoryLineDbHelper.Terrain.BAR;
+        onPick(view);
+    }
+
+    public void startRestaurantRoute(View view) {
+        TreasureHuntStoryLineDbHelper.playTerrain = TreasureHuntStoryLineDbHelper.Terrain.RESTAURANT;
+        onPick(view);
+    }
+
+    public void startFastfoodRoute(View view) {
+        TreasureHuntStoryLineDbHelper.playTerrain = TreasureHuntStoryLineDbHelper.Terrain.FASTFOOD;
+        onPick(view);
+    }
+
 
 
 }

@@ -29,8 +29,7 @@
         android:onClick="answerQuestion"
 
         android:text="@string/answer_question"
-        style="@style/answer_button"
-        android:onClick="answerQuestion"/>
+        style="@style/answer_button"/>
 
 </LinearLayout>
 

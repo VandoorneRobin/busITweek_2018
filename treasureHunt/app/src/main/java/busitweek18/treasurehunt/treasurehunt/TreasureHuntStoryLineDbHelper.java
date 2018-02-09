@@ -19,7 +19,7 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
     public enum Terrain {CAMPUS, MUSEUM, BAR, RESTAURANT, FASTFOOD};
 
     // CHANGE FOR CAMPUS/REAL LOCATIONS:
-    private Terrain playTerrain = Terrain.CAMPUS;
+    public static Terrain playTerrain = Terrain.CAMPUS;
 
     public static HashMap<String, Integer> markerResources = new HashMap<>();
 
