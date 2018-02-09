@@ -40,9 +40,34 @@ public class TreasurepickActivity extends AppCompatActivity {
     }
 
     //have to set this to mapactivity
-    public void onPick(View view){
+    public void onPickMusea(View view){
         Log.i(TAG,"User picked a treasure");
-        //have to set this to mapactivity
+        Constants c = new Constants();
+        c.setMap("MUSEA");
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
+    }
+
+    public void onPickBar(View view){
+        Log.i(TAG,"User picked a treasure");
+        Constants c = new Constants();
+        c.setMap("BAR");
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
+    }
+
+    public void onPickRestaurant(View view){
+        Log.i(TAG,"User picked a treasure");
+        Constants c = new Constants();
+        c.setMap("RESTAURANT");
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
+    }
+
+    public void onPickFastfood(View view){
+        Log.i(TAG,"User picked a treasure");
+        Constants c = new Constants();
+        c.setMap("FASTFOOD");
         Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }

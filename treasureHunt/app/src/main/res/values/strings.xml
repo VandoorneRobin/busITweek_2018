@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TreasureHunt</string>
+    <string name="app_name">Treasure Hunt</string>
     <string name="title_activity_maps">Map</string>
 
     <string name="action_settings">Settings</string>
@@ -7,12 +7,23 @@
 
     <string name="selectBar">Bar</string>
     <string name="selectRestaurant">Restaurant</string>
-    <string name="selectFastFood">FastFood</string>
-    <string name="selectMuseum">Musea</string>
-
+    <string name="selectFastFood">Fastfood</string>
+    <string name="selectMuseum">Museum</string>
+    <string name="answer_question">Answer question</string>
     <string name="startTreasureHunt">Start Treasure Hunt</string>
     <string name="pickatreasure">Pick a treasure</string>
     <string name="title_activity_text_select">TextSelectActivity</string>
-    <string name="answer_question">Answer question</string>
+    <string name= "mahenTheater">Mahen Theater</string>
+    <string name= "churchStJosef">Church of St. Josef</string>
+    <string name= "cathedralStPeterPaul">Cathedral of St. Peter and Paul</string>
+    <string name= "cabbageMarketSquare">Cabbage Market Square</string>
+    <string name= "oldTownHall">Old Town Hall</string>
+    <string name= "astronomicalClock">Astronomical Clock</string>
+    <string name= "spilberkCastle">Špilberk Castle</string>
+    <string name= "treasure">Treasure</string>
+
+    <string name="title_activity_simple_puzzle">SimplePuzzleActivity</string>
+
+
 
 </resources>
