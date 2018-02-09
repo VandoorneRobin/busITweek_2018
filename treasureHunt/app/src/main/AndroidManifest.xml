@@ -36,7 +36,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-
         <activity android:name=".TreasurepickActivity" />
         <activity
             android:name=".MapsActivity"
@@ -44,8 +43,11 @@
         <activity
             android:name=".TextSelectActivity"
             android:label="@string/title_activity_text_select"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SimplePuzzleActivity"
+            android:label="@string/title_activity_simple_puzzle"
             android:theme="@style/AppTheme"></activity>
-
     </application>
 
 </manifest>
