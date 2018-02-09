@@ -1,0 +1,3 @@
+# Referenced at C:\Users\Ines\Documents\2BaDig-x\busITweek_2018\treasureHunt\engine\build\intermediates\manifest\androidTest\debug\AndroidManifest.xml:9
+-keep class android.support.test.runner.AndroidJUnitRunner { <init>(...); }
+

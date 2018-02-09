@@ -1,6 +1,8 @@
 package busitweek18.treasurehunt.treasurehunt;
 
+import android.content.Intent;
 import android.content.res.Resources;
+
 
 
 import android.app.AlertDialog;
@@ -8,6 +10,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -115,50 +118,47 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        try {
-            // Customise the styling of the base map using a JSON object defined
-            // in a raw resource file.
-            boolean success = googleMap.setMapStyle(
-                    MapStyleOptions.loadRawResourceStyle(
-                            this, R.raw.style_json));
-
-            if (!success) {
-                Log.e(TAG, "Style parsing failed.");
-            }
-        } catch (Resources.NotFoundException e) {
-            Log.e(TAG, "Can't find style. Error: ", e);
-        }
+//        try {
+//            // Customise the styling of the base map using a JSON object defined
+//            // in a raw resource file.
+//            boolean success = googleMap.setMapStyle(
+//                    MapStyleOptions.loadRawResourceStyle(
+//                            this, R.raw.style_json));
+//
+//            if (!success) {
+//                Log.e(TAG, "Style parsing failed.");
+//            }
+//        } catch (Resources.NotFoundException e) {
+//            Log.e(TAG, "Can't find style. Error: ", e);
+//        }
 
         initializeTasks();
     }
 
     private void initializeTasks() {
         latLngBoundsBuilder = new LatLngBounds.Builder();
-
+        Marker newMarker = null;
         for(Task task : storyLine.taskList()) {
             Marker marker = null;
             if(task instanceof GPSTask) {
-                // GPS task
+
+
             } else if (task instanceof BeaconTask) {
-                // Beacon task
+                
+
                 BeaconDefinition definition = new BeaconDefinition((BeaconTask) task) {
                     @Override
                     public void execute() {
-                        // TODO Run puzzle activity
-                        //runPuzzleActivity(currentTask.getPuzzle());
+                        runPuzzleActivity(currentTask.getPuzzle());
                     }
                 };
 
                 beaconUtil.addBeacon(definition);
+
+
+                beaconUtil.addBeacon(definition);
             } else if (task instanceof CodeTask) {
-                Marker newMarker = MapUtil.createColoredCircleMarker(
-                        this,
-                        mMap,
-                        task.getName(),
-                        R.color.colorPrimary,
-                        R.style.marker_text_style,
-                        new LatLng(task.getLatitude(), task.getLongitude())
-                );
+
             }
 
             int src;
@@ -181,6 +181,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             marker = mMap.addMarker(markerOptions);
             markers.put(task, marker);
             latLngBoundsBuilder.include(new LatLng(task.getLatitude(), task.getLongitude()));
+
         }
         updateMarkers();
         mMap.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
@@ -192,8 +193,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 mMap.animateCamera(cameraUpdate);
             }
         });
+
+
     }
 
+    private void runPuzzleActivity (Puzzle puzzle){
+        if (puzzle instanceof SimplePuzzle){
+            Intent intent = new Intent(this, SimplePuzzleActivity.class);
+            startActivity(intent);
+        }
+        if (puzzle instanceof ImageSelectPuzzle){
+            Intent intent = new Intent(this, ImageSelectActivity.class);
+            startActivity(intent);
+        }
+        if (puzzle instanceof ChoicePuzzle){
+            Intent intent = new Intent(this, TextSelectActivity.class);
+            startActivity(intent);
+        }
+    }
     private void updateMarkers() {
         for(Map.Entry<Task, Marker> entry : markers.entrySet()) {
             if(currentTask != null) {
