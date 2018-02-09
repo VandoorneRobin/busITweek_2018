@@ -47,6 +47,7 @@ import cz.mendelu.busItWeek.library.StoryLine;
 import cz.mendelu.busItWeek.library.Task;
 import cz.mendelu.busItWeek.library.beacons.BeaconDefinition;
 import cz.mendelu.busItWeek.library.beacons.BeaconUtil;
+import cz.mendelu.busItWeek.library.map.MapUtil;
 import cz.mendelu.busItWeek.library.qrcode.QRCodeUtil;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener, GoogleMap.OnMarkerClickListener {
@@ -89,7 +90,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         locationRequest.setInterval(5000);
 
 
-      //  qrButton = findViewById(R.id.qr_code_button);
+       qrButton = findViewById(R.id.qr_code_button);
 
         beaconUtil = new BeaconUtil(this);
     }
@@ -144,7 +145,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 beaconUtil.addBeacon(definition);
             } else if (task instanceof CodeTask) {
-                // Code task
+                Marker newMarker = MapUtil.createColoredCircleMarker(
+                        this,
+                        mMap,
+                        task.getName(),
+                        R.color.colorPrimary,
+                        R.style.marker_text_style,
+                        new LatLng(task.getLatitude(), task.getLongitude())
+                );
             }
 
             int src;
