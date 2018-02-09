@@ -1,17 +1,21 @@
 package busitweek18.treasurehunt.treasurehunt;
 
         import android.content.Intent;
+        import android.content.res.AssetFileDescriptor;
         import android.graphics.Typeface;
+        import android.media.MediaPlayer;
         import android.os.Bundle;
         import android.support.v7.app.AppCompatActivity;
         import android.util.Log;
         import android.view.View;
         import android.widget.Button;
 
+        import java.io.IOException;
+
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG ="MainActivity";
-
+    private MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,17 @@ public class MainActivity extends AppCompatActivity {
         button.setTypeface(tf);
         // use this to adapt the font-size of this activity
 
+        try {
+            AssetFileDescriptor afd = getAssets().openFd("music/pirates.mp3");
+           player = new MediaPlayer();
+            player.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
+            player.prepare();
+            player.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     public void goToTreasures(View view) {
@@ -45,6 +60,23 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+/*
+    @Override
+    protected void onResume() {
+        super.onResume();
+        player.reset();
+    }
+*/
+    @Override
+    protected void onStop() {
+        try {
+            super.onStop();
+            player.reset();
+            player.prepare();
+            player.stop();
+            player.release();
+        }catch (Exception ex){
 
-
+        }
+    }
 }
