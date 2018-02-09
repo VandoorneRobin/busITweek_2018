@@ -1,11 +1,15 @@
 package busitweek18.treasurehunt.treasurehunt;
 
+<<<<<<< HEAD
+import android.content.res.Resources;
+=======
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+>>>>>>> 9bc6d2b4763a09ef305d009b4e544cb3a4b8f2e8
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -29,6 +33,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.maps.android.SphericalUtil;
@@ -47,6 +52,7 @@ import cz.mendelu.busItWeek.library.StoryLine;
 import cz.mendelu.busItWeek.library.Task;
 import cz.mendelu.busItWeek.library.beacons.BeaconDefinition;
 import cz.mendelu.busItWeek.library.beacons.BeaconUtil;
+import cz.mendelu.busItWeek.library.map.MapUtil;
 import cz.mendelu.busItWeek.library.qrcode.QRCodeUtil;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener, GoogleMap.OnMarkerClickListener {
@@ -66,7 +72,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private HashMap<Task, Marker> markers = new HashMap<>();
     private LatLngBounds.Builder latLngBounds;
 
+<<<<<<< HEAD
+    private static final String TAG = MapsActivity.class.getSimpleName();
+
+
+
+=======
     private ImageButton qrButton;
+>>>>>>> 9bc6d2b4763a09ef305d009b4e544cb3a4b8f2e8
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,7 +102,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         locationRequest.setInterval(5000);
 
 
-      //  qrButton = findViewById(R.id.qr_code_button);
+       qrButton = findViewById(R.id.qr_code_button);
 
         beaconUtil = new BeaconUtil(this);
     }
@@ -104,9 +117,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
-    @Override
+@Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
+        try {
+            // Customise the styling of the base map using a JSON object defined
+            // in a raw resource file.
+            boolean success = googleMap.setMapStyle(
+                    MapStyleOptions.loadRawResourceStyle(
+                            this, R.raw.style_json));
+
+            if (!success) {
+                Log.e(TAG, "Style parsing failed.");
+            }
+        } catch (Resources.NotFoundException e) {
+            Log.e(TAG, "Can't find style. Error: ", e);
+        }
+
         initializeTasks();
     }
 
@@ -129,7 +157,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 beaconUtil.addBeacon(definition);
             } else if (task instanceof CodeTask) {
-                // Code task
+                Marker newMarker = MapUtil.createColoredCircleMarker(
+                        this,
+                        mMap,
+                        task.getName(),
+                        R.color.colorPrimary,
+                        R.style.marker_text_style,
+                        new LatLng(task.getLatitude(), task.getLongitude())
+                );
             }
 
             int src;

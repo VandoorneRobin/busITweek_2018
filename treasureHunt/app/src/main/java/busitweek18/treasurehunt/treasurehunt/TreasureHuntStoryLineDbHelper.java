@@ -16,23 +16,39 @@ import cz.mendelu.busItWeek.library.builder.StoryLineBuilder;
 
 public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
     ArrayList<LatLng> locations = new ArrayList<LatLng> ();
+<<<<<<< HEAD
+
+
+//    public enum Terrain {REAL, BAR};
     public enum Terrain {REAL, CAMPUS};
+=======
+    public enum Terrain {CAMPUS, MUSEUM, BAR, RESTAURANT, FASTFOOD};
+>>>>>>> 9bc6d2b4763a09ef305d009b4e544cb3a4b8f2e8
 
     // CHANGE FOR CAMPUS/REAL LOCATIONS:
+//    private Terrain playTerrain = Terrain.valueOf(test());
     private Terrain playTerrain = Terrain.CAMPUS;
 
     public static HashMap<String, Integer> markerResources = new HashMap<>();
 
     public TreasureHuntStoryLineDbHelper() {
-        super(5);
+        super(8);
         addLocations();
         ArrayList<LatLng> locations;
+    }
+
+    public Terrain getPlayTerrain() {
+        return playTerrain;
+    }
+
+    public void setPlayTerrain(Terrain playTerrain) {
+        this.playTerrain = playTerrain;
     }
 
     @Override
     protected void onCreate(StoryLineBuilder builder) {
         // Mahen Theater
-        builder.addGPSTask("1")
+        builder.addGPSTask("Mahen Theater")
                 .radius(20)
                 .location(locations.get(0).latitude, locations.get(0).longitude)
                 .victoryPoints(5)
@@ -45,10 +61,14 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
         markerResources.put("1", R.drawable.ic_theatre_masks);
 
         // Church of St. Josef
-        builder.addBeaconTask("2")
+        builder.addBeaconTask("Church of St. Josef")
                 .location(locations.get(1).latitude, locations.get(1).longitude)
 
+<<<<<<< HEAD
+                .beacon(30265, 64901)    // BLUE beacon
+=======
                 .beacon(30265, 64901)    // BLUE beacon                 
+>>>>>>> 9bc6d2b4763a09ef305d009b4e544cb3a4b8f2e8
                 .imageSelectPuzzle()
                 .question("Which statue do you see on the church?")
                 .hint("There is a famous Brno legend connected to the statue. The statue is placed in een certain position in the direction of Saint Peter and Paul's cathedral. It all arises from a competition between the two churches to build the higher churchtower. ")
@@ -58,11 +78,12 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .addImage(R.drawable.wrongstatue3, false)
                 .puzzleDone()
                 .taskDone();
-        markerResources.put("2", R.drawable.ic_church);
+        markerResources.put("Church of St. Josef", R.drawable.ic_church);
+
 
 
         // Cathedral of St. Peter and Paul
-        builder.addBeaconTask("3")
+        builder.addBeaconTask("Cathedral of St. Peter and Paul")
                 .location(locations.get(2).latitude, locations.get(2).longitude)
                 .beacon(63187, 53881)               // YELLOW beacon
                 .simplePuzzle()
@@ -70,10 +91,10 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .answer("Church of St. Josef")                  // TODO add answer
                 .puzzleDone()
                 .taskDone();
-        markerResources.put("3", R.drawable.ic_church_1);
+        markerResources.put("Cathedral of St. Peter and Paul", R.drawable.ic_church_1);
 
         // Cabbage Market Square
-        builder.addCodeTask("4")
+        builder.addCodeTask("Cabbage Market Square")
                 .location(locations.get(3).latitude, locations.get(3).longitude)
                 .qr("CabbageSquareMarket") // qr-code file found in git (folder 'qr_codes')
                 .choicePuzzle()
@@ -85,10 +106,15 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .addChoice(	"Baroque, Gothic Revival", true)
                 .puzzleDone()
                 .taskDone();
-        markerResources.put("4", R.drawable.ic_augustus_of_prima_porta);
+        markerResources.put("Cabbage Market Square", R.drawable.ic_augustus_of_prima_porta);
 
+<<<<<<< HEAD
+        // Brnenské kolo & Old Town Hall
+        builder.addBeaconTask("Old Town Hall")
+=======
             // Brněnské kolo & Old Town Hall
         builder.addBeaconTask("5")
+>>>>>>> 9bc6d2b4763a09ef305d009b4e544cb3a4b8f2e8
                 .location(locations.get(4).latitude, locations.get(4).longitude)
                 .beacon(23482, 14779)                          // RED beacon
                 .simplePuzzle()
@@ -97,10 +123,10 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .answer("Crocodile")
                 .puzzleDone()
                 .taskDone();
-        markerResources.put("5", R.drawable.ic_crocodile_facing_right);
+        markerResources.put("Old Town Hall", R.drawable.ic_crocodile_facing_right);
 
         // Astronomical Clock
-        builder.addCodeTask("6")
+        builder.addCodeTask("Astronomical Clock")
                 .location(locations.get(5).latitude, locations.get(5).longitude)
                 .qr("glass marble") // qr-code file found in git (folder 'qr_codes')
                 .simplePuzzle()
@@ -109,10 +135,10 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .answer("Clock")
                 .puzzleDone()
                 .taskDone();
-        markerResources.put("6", R.drawable.ic_big_ben);
+        markerResources.put("Astronomical Clock", R.drawable.ic_big_ben);
 
         // Špilberk Castle
-        builder.addGPSTask("7")
+        builder.addGPSTask("Špilberk Castle")
                 .location(locations.get(6).latitude, locations.get(6).longitude)
                 .radius(20)
                 .choicePuzzle()
@@ -122,7 +148,7 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 .addChoice("Prison", true)
                 .puzzleDone()
                 .taskDone();
-        markerResources.put("7", R.drawable.ic_sand_castle);
+        markerResources.put("Špilberk Castle", R.drawable.ic_sand_castle);
 
         //treasure
         builder.addGPSTask("Treasure")
@@ -137,19 +163,42 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
         markerResources.put("Treasure", R.drawable.ic_logomakr_3uv46h);
     }
 
+//    private String test(){
+//
+//        Constants c = new Constants();
+//
+//        return c.getMap();
+//
+//    }
+
     private void addLocations() {
-        switch (playTerrain) {
+
+
+
+
+        switch (getPlayTerrain()) {
+
+//            case BAR:
+//                locations.add(new LatLng(49.20997, 16.61479)); // Mahen Theater (STARTPOINT)
+//                locations.add(new LatLng(49.21053, 16.61532)); // Church of St. Josef
+//                locations.add(new LatLng(49.21096, 16.61648)); // Cathedral of St. Peter and Paul
+//                locations.add(new LatLng(49.21197, 16.61624)); // Cabbage Market Square
+//                locations.add(new LatLng(49.21198, 16.61697)); // Brnenské kolo
+//                locations.add(new LatLng(49.21095, 16.61755)); // Astronomical Clock
+//                locations.add(new LatLng(49.20995, 16.61646)); // Špilberk Castle
+//                locations.add(new LatLng(49.20962, 16.61499)); // Úvozna (ENDPOINT)
+//                break;
             case CAMPUS:
                 locations.add(new LatLng(49.20997, 16.61479)); // Mahen Theater (STARTPOINT)
                 locations.add(new LatLng(49.21053, 16.61532)); // Church of St. Josef
                 locations.add(new LatLng(49.21096, 16.61648)); // Cathedral of St. Peter and Paul
                 locations.add(new LatLng(49.21197, 16.61624)); // Cabbage Market Square
-                locations.add(new LatLng(49.21198, 16.61697)); // Brněnské kolo
+                locations.add(new LatLng(49.21198, 16.61697)); // Brnenské kolo
                 locations.add(new LatLng(49.21095, 16.61755)); // Astronomical Clock
                 locations.add(new LatLng(49.20995, 16.61646)); // Špilberk Castle
                 locations.add(new LatLng(49.20962, 16.61499)); // Úvozna (ENDPOINT)
                 break;
-            case REAL:
+            case MUSEUM:
                 locations.add(new LatLng(49.195799, 16.613774)); // Mahen Theater (STARTPOINT)
                 locations.add(new LatLng(49.193100, 16.612106)); // Church of St. Josef
                 locations.add(new LatLng(49.191033, 16.606986)); // Cathedral of St. Peter and Paul
@@ -157,7 +206,37 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 locations.add(new LatLng(49.193149, 16.608712)); // Brněnské kolo
                 locations.add(new LatLng(49.194809, 16.608588)); // Astronomical Clock
                 locations.add(new LatLng(49.194706, 16.598401)); // Špilberk Castle
+                locations.add(new LatLng(49.19104, 16.59393));   // Mendel Museum (ENDPOINT)
+                break;
+            case BAR:
+                locations.add(new LatLng(49.195799, 16.613774)); // Mahen Theater (STARTPOINT)
+                locations.add(new LatLng(49.193100, 16.612106)); // Church of St. Josef
+                locations.add(new LatLng(49.191033, 16.606986)); // Cathedral of St. Peter and Paul
+                locations.add(new LatLng(49.192366, 16.608915)); // Cabbage Market Square
+                locations.add(new LatLng(49.193149, 16.608712)); // Brněnské kolo
+                locations.add(new LatLng(49.194809, 16.608588)); // Astronomical Clock
+                locations.add(new LatLng(49.194706, 16.598401)); // Špilberk Castle
+                locations.add(new LatLng(49.19335, 16.60669));   // MayDay cocktail bar (ENDPOINT)
+                break;
+            case RESTAURANT:
+                locations.add(new LatLng(49.195799, 16.613774)); // Mahen Theater (STARTPOINT)
+                locations.add(new LatLng(49.193100, 16.612106)); // Church of St. Josef
+                locations.add(new LatLng(49.191033, 16.606986)); // Cathedral of St. Peter and Paul
+                locations.add(new LatLng(49.192366, 16.608915)); // Cabbage Market Square
+                locations.add(new LatLng(49.193149, 16.608712)); // Brnenské kolo
+                locations.add(new LatLng(49.194809, 16.608588)); // Astronomical Clock
+                locations.add(new LatLng(49.194706, 16.598401)); // Špilberk Castle
                 locations.add(new LatLng(49.199024, 16.593342)); // Úvozna (ENDPOINT)
+                break;
+            case FASTFOOD:
+                locations.add(new LatLng(49.195799, 16.613774)); // Mahen Theater (STARTPOINT)
+                locations.add(new LatLng(49.193100, 16.612106)); // Church of St. Josef
+                locations.add(new LatLng(49.191033, 16.606986)); // Cathedral of St. Peter and Paul
+                locations.add(new LatLng(49.192366, 16.608915)); // Cabbage Market Square
+                locations.add(new LatLng(49.193149, 16.608712)); // Brněnské kolo
+                locations.add(new LatLng(49.194809, 16.608588)); // Astronomical Clock
+                locations.add(new LatLng(49.194706, 16.598401)); // Špilberk Castle
+                locations.add(new LatLng(49.18864, 16.59799));   // Občerstvení Brutus(ENDPOINT)
         }
     }
 }
