@@ -13,14 +13,14 @@
     <string name="startTreasureHunt">Start Treasure Hunt</string>
     <string name="pickatreasure">Pick a treasure</string>
     <string name="title_activity_text_select">TextSelectActivity</string>
-    <String name= "mahenTheater">Mahen Theater</String>
-    <String name= "churchStJosef">Church of St. Josef</String>
-    <String name= "cathedralStPeterPaul">Cathedral of St. Peter and Paul</String>
-    <String name= "cabbageMarketSquare">Cabbage Market Square</String>
-    <String name= "oldTownHall">Old Town Hall</String>
-    <String name= "astronomicalClock">Astronomical Clock</String>
-    <String name= "spilberkCastle">Špilberk Castle</String>
-    <String name= "treasure">Treasure</String>
+    <string name= "mahenTheater">Mahen Theater</string>
+    <string name= "churchStJosef">Church of St. Josef</string>
+    <string name= "cathedralStPeterPaul">Cathedral of St. Peter and Paul</string>
+    <string name= "cabbageMarketSquare">Cabbage Market Square</string>
+    <string name= "oldTownHall">Old Town Hall</string>
+    <string name= "astronomicalClock">Astronomical Clock</string>
+    <string name= "spilberkCastle">Špilberk Castle</string>
+    <string name= "treasure">Treasure</string>
 
     <string name="title_activity_simple_puzzle">SimplePuzzleActivity</string>
 
