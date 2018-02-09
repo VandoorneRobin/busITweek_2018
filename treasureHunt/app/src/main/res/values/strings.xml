@@ -7,8 +7,8 @@
 
     <string name="selectBar">Bar</string>
     <string name="selectRestaurant">Restaurant</string>
-    <string name="selectFastFood">FastFood</string>
-    <string name="selectMuseum">Musea</string>
+    <string name="selectFastFood">Fastfood</string>
+    <string name="selectMuseum">Museum</string>
     <string name="answer_question">Answer question</string>
     <string name="startTreasureHunt">Start Treasure Hunt</string>
     <string name="pickatreasure">Pick a treasure</string>

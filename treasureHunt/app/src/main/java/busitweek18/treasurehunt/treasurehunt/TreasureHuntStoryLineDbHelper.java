@@ -16,7 +16,7 @@ import cz.mendelu.busItWeek.library.builder.StoryLineBuilder;
 
 public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
     ArrayList<LatLng> locations = new ArrayList<LatLng> ();
-    public enum Terrain {REAL, CAMPUS};
+    public enum Terrain {CAMPUS, MUSEUM, BAR, RESTAURANT, FASTFOOD};
 
     // CHANGE FOR CAMPUS/REAL LOCATIONS:
     private Terrain playTerrain = Terrain.CAMPUS;
@@ -149,7 +149,27 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 locations.add(new LatLng(49.20995, 16.61646)); // Špilberk Castle
                 locations.add(new LatLng(49.20962, 16.61499)); // Úvozna (ENDPOINT)
                 break;
-            case REAL:
+            case MUSEUM:
+                locations.add(new LatLng(49.195799, 16.613774)); // Mahen Theater (STARTPOINT)
+                locations.add(new LatLng(49.193100, 16.612106)); // Church of St. Josef
+                locations.add(new LatLng(49.191033, 16.606986)); // Cathedral of St. Peter and Paul
+                locations.add(new LatLng(49.192366, 16.608915)); // Cabbage Market Square
+                locations.add(new LatLng(49.193149, 16.608712)); // Brněnské kolo
+                locations.add(new LatLng(49.194809, 16.608588)); // Astronomical Clock
+                locations.add(new LatLng(49.194706, 16.598401)); // Špilberk Castle
+                locations.add(new LatLng(49.19104, 16.59393));   // Mendel Museum (ENDPOINT)
+                break;
+            case BAR:
+                locations.add(new LatLng(49.195799, 16.613774)); // Mahen Theater (STARTPOINT)
+                locations.add(new LatLng(49.193100, 16.612106)); // Church of St. Josef
+                locations.add(new LatLng(49.191033, 16.606986)); // Cathedral of St. Peter and Paul
+                locations.add(new LatLng(49.192366, 16.608915)); // Cabbage Market Square
+                locations.add(new LatLng(49.193149, 16.608712)); // Brněnské kolo
+                locations.add(new LatLng(49.194809, 16.608588)); // Astronomical Clock
+                locations.add(new LatLng(49.194706, 16.598401)); // Špilberk Castle
+                locations.add(new LatLng(49.19335, 16.60669));   // MayDay cocktail bar (ENDPOINT)
+                break;
+            case RESTAURANT:
                 locations.add(new LatLng(49.195799, 16.613774)); // Mahen Theater (STARTPOINT)
                 locations.add(new LatLng(49.193100, 16.612106)); // Church of St. Josef
                 locations.add(new LatLng(49.191033, 16.606986)); // Cathedral of St. Peter and Paul
@@ -158,6 +178,16 @@ public class TreasureHuntStoryLineDbHelper extends StoryLineDatabaseHelper {
                 locations.add(new LatLng(49.194809, 16.608588)); // Astronomical Clock
                 locations.add(new LatLng(49.194706, 16.598401)); // Špilberk Castle
                 locations.add(new LatLng(49.199024, 16.593342)); // Úvozna (ENDPOINT)
+                break;
+            case FASTFOOD:
+                locations.add(new LatLng(49.195799, 16.613774)); // Mahen Theater (STARTPOINT)
+                locations.add(new LatLng(49.193100, 16.612106)); // Church of St. Josef
+                locations.add(new LatLng(49.191033, 16.606986)); // Cathedral of St. Peter and Paul
+                locations.add(new LatLng(49.192366, 16.608915)); // Cabbage Market Square
+                locations.add(new LatLng(49.193149, 16.608712)); // Brněnské kolo
+                locations.add(new LatLng(49.194809, 16.608588)); // Astronomical Clock
+                locations.add(new LatLng(49.194706, 16.598401)); // Špilberk Castle
+                locations.add(new LatLng(49.18864, 16.59799));   // Občerstvení Brutus(ENDPOINT)
         }
     }
 }
